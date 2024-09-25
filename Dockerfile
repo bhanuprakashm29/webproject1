@@ -1,5 +1,2 @@
-FROM debian:latest
-WORKDIR /app
-RUN apt-get update && apt-get install -y apache2
-EXPOSE 80
-CMD [ "apachectl","-D","FOREGROUND" ]
+FROM httpd:2.4
+COPY ./index.html/ /usr/local/apache2/htdocs/
